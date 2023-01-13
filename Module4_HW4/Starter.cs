@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Module4_HW4.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Module4_HW4
 {
@@ -12,11 +10,7 @@ namespace Module4_HW4
             ConfigController.ValidateConfig();
             var optionsBuilder =
                 new DbContextOptionsBuilder<DatabaseContext>();
-            var options = optionsBuilder
-                    .UseSqlServer(
-                    ConfigController.CurrentConfigs.ConnectionString)
-                    .Options;
-
+            var options = optionsBuilder.Options;
             using (DatabaseContext db = new DatabaseContext(options))
             {
                db.SaveChanges();

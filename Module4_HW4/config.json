@@ -1,3 +1,5 @@
 {
-  "ConnectionString": "Server=LAPTOP-77MT8LVK;Database=Module4_HW4_DB;Trusted_Connection=True;TrustServerCertificate=True"
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=LAPTOP-77MT8LVK;Database=Module4_HW4_DB;Trusted_Connection=True;TrustServerCertificate=True"
+  }
 }

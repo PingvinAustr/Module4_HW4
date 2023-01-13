@@ -15,7 +15,6 @@ namespace Module4_HW4.Configurations
 
             builder.Property(x => x.ProjectId)
                 .HasColumnName("ProjectId")
-                .ValueGeneratedOnAdd()
                 .IsRequired();
 
             builder.Property(x => x.Name)
@@ -35,6 +34,11 @@ namespace Module4_HW4.Configurations
             builder.HasMany(p => p.EmployeeProject)
             .WithOne(ep => ep.Project)
             .HasForeignKey(ep => ep.ProjectId);
+
+            builder.HasOne(d => d.Client)
+                .WithMany(p => p.Projects)
+                .HasForeignKey(d => d.ClientId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -33,7 +33,6 @@ namespace Module4_HW4
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(
                     "Config file ('.json') does not exist! " +
-                    "Logger is not able to save logs to file.",
                     "Please create config file and try again.");
                 Console.ForegroundColor = ConsoleColor.White;
                 return false;
